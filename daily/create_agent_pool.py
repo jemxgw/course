@@ -48,7 +48,7 @@ def verify_ip(ip_e):
 
 
 # 爬取代理IP
-def crawl(param_e):
+def crawl(param_e, i):
     ips = []
     response = requests.get(param_e['head'] + str(i) + param_e['tail'], headers=param_e['headers'])
     text = response.text
@@ -62,6 +62,30 @@ def crawl(param_e):
             ips.append((ip, port, type))
 
     return ips
+
+
+# http://www.gatherproxy.com/
+def crawl2():
+    ips = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+        'Referer': 'http://www.gatherproxy.com/zh/proxylist/anonymity/?t=Elite',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+        'Cache-Control': 'max-age=0',
+        'Connection': 'keep-alive',
+        'Content-Length': '20',
+        'Origin': 'http: // www.gatherproxy.com',
+        'Upgrade-Insecure-Requests': '1',
+        'Cookie': 'ASP.NET_SessionId=rbkatxgvtidoklacegszyllo; session_depth=www.gatherproxy.com%3D2%7C563749776%3D2; _gat=1; _lang=zh-CN; _ga=GA1.2.1064384249.1488818198'
+    }
+    response = requests.post('http://www.gatherproxy.com/zh/proxylist/anonymity/?t=Elite', headers=headers,
+                             data='Type=elite&PageIdx=' + str(i) + '&Uptime=0')
+    data = {
+        'Type':'elite',
+        'PageIdx': '2'
+    }
 
 
 # 参数
@@ -99,7 +123,6 @@ param = [
         'tail': '/',
         'selector': '#list',
         'headers': {
-
             'Cookie': '_ydclearance=9c854a7b42e96e7f2270b114-6089-447a-bb15-06fd5dcfaafc-1488986138; channelid=0; sid=1488978519592487; _ga=GA1.2.1368528244.1488819329; _gat=1; Hm_lvt_7ed65b1cc4b810e9fd37959c9bb51b31=1488819329; Hm_lpvt_7ed65b1cc4b810e9fd37959c9bb51b31=1488978942',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
             'Host': 'www.kuaidaili.com'
@@ -110,7 +133,7 @@ param = [
 if __name__ == '__main__':
     for i in range(1, 4):
         for param_e in param:
-            ip_list = crawl(param_e)
+            ip_list = crawl(param_e, i)
             # print(ip_list)
             p = ThreadPool(4)
             start = time.time()
