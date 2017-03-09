@@ -38,7 +38,7 @@ def verify_ip(ip_e):
                 #     f.write(ip + u':' + port)
                 #     f.write('\n')
                 # 上传到队列
-                requests.post('http://117.25.133.12:3221/?charset=utf-8&name=agent_pool&opt=put&check=BSC258',
+                requests.post('http://****:****/?charset=utf-8&name=agent_pool&opt=put&check=BSC258',
                               data=ip_e[2] + u'://' + ip_e[0] + u':' + ip_e[1])
 
         else:
