@@ -40,7 +40,7 @@ def fsct(field):
             ['2010-01-01', '2011-01-01', '2012-01-01', '2013-01-01', '2013-12-31', '2015-01-01', '2016-01-01',
              '2016-12-31']),
         'lower_window': -1,
-        'upper_window': 3,
+        'upper_window': 2,
     })
 
     spring = pd.DataFrame({
@@ -49,7 +49,7 @@ def fsct(field):
             ['2010-02-13', '2011-02-02', '2012-01-28', '2013-02-09', '2014-01-30', '2015-02-18', '2016-02-07',
              '2017-01-27']),
         'lower_window': 0,
-        'upper_window': 7,
+        'upper_window': 6,
     })
 
     national = pd.DataFrame({
@@ -58,7 +58,7 @@ def fsct(field):
             ['2010-10-01', '2011-10-01', '2012-09-30', '2013-10-01', '2014-10-01', '2015-10-01', '2016-10-01',
              '2017-10-01']),
         'lower_window': -1,
-        'upper_window': 7,
+        'upper_window': 6,
     })
 
     christmas = pd.DataFrame({
@@ -82,7 +82,7 @@ def fsct(field):
     m.plot_components(forecast).savefig(f'/Users/zhangmimi/Git/course/daily/BoxOffice/{field}trend.png', dpi=150)
     # return forecast
 
-fcstData = fsct('ShowCount')
+fcstData = fsct('BoxOffice')
 # print(fcstData['2017-01-01'<=fcstData.ds <= '2017-02-28'].groupby('ds').sum())
 # sum_ = fcstData['2017-01-01'<=fcstData.ds <= '2017-02-28']
 # sum = sum_.groupby('ds').sum()
