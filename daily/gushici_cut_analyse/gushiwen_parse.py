@@ -4,7 +4,7 @@
 from pymongo import MongoClient
 import json
 
-client = MongoClient('mongodb://192.168.0.176:27017')
+client = MongoClient('')
 db = client['pdc']
 coll = db['12251']
 coll_target = db['gushiwen']
