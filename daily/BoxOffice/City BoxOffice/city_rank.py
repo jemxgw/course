@@ -26,8 +26,14 @@ def get_mean_New(data, fieldName):
 
     return result
 
+# def get_city_new(city,data):
+#     result = data[data.CityName==city]
+#
+#     return result
+
 
 def graph_rank(data, fieldName):
+    plt.subplots()
     plt.ylabel('CityName', fontsize=8)
     plt.xlabel(fieldName, fontsize=8)
     plt.title(f'City {fieldName} Top10(2010-2016)', fontsize = 8)
@@ -35,18 +41,20 @@ def graph_rank(data, fieldName):
     plt.subplots_adjust(right=0.95, wspace=0.5, hspace=0.5, bottom=0.1, top=0.95)
     plt.barh(range(1, 11), data[fieldName])
     plt.savefig(f'/Users/zhangmimi/Git/course/daily/BoxOffice/City BoxOffice/City{fieldName}Top10(2010-2016).png', dpi = 150)
-    # plt.show()
-
-# def graph_change(df,new):
 
 
+# def graph_change(data,field,index):
+#     plt.subplots()
+#     # plt.style.use('fivethirtyeight')
+#     for elem in index:
+#         city_new = get_city_new(elem,data)
+#         plt.plot(city_new['year'], city_new[field])
 
 
 if __name__ == '__main__':
     df = pd.read_csv('/Users/zhangmimi/Git/course/daily/BoxOffice/City BoxOffice/annualCityBoxOffice.csv')
     field = 'BoxOffice'
-    new = get_mean_New(df, field)
-    # graph_rank(new, field)
-    for elem in new.index:
-        print(elem)
+    new = get_sum_New(df, field)
+    graph_rank(new, field)
+    plt.show()
 
