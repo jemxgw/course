@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f9a9d81-e61f-44fb-992b-90cc91fa8547" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/daily/BoxOffice/month_boxoffice_forecast.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/daily/BoxOffice/annualCityBoxOffice.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/daily/BoxOffice/annualLineBoxOffice.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/daily/BoxOffice/get_city_BoxOffice.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/daily/BoxOffice/get_line_BoxOffice.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="course.iws" />
@@ -533,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489082809448</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="city and line boxoffice analyse">
+      <created>1490063235479</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1490063235479</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -584,7 +586,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="file change" />
     <MESSAGE value="selenium crawl proxy" />
-    <option name="LAST_COMMIT_MESSAGE" value="selenium crawl proxy" />
+    <MESSAGE value="city and line boxoffice analyse" />
+    <option name="LAST_COMMIT_MESSAGE" value="city and line boxoffice analyse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
