@@ -86,5 +86,14 @@
   ... 
   >>> print(pets)
   ['dog', 'dog', 'goldfish', 'rabbit']
-  >>> 
+  >>> person = {'name': 'mimi', 'location': 'xiamen'}
+  >>> flag = 1
+  >>> while flag:
+  ...     person['location'] = 'fuzhou'
+  ...     if person['location'] != 'xiamen':
+  ...         print(person['name'] + ' went to ' + person['location'] + ' yesterday')
+  ...         flag = 0
+  ... 
+  mimi went to fuzhou yesterday
+  >>>
   ```
