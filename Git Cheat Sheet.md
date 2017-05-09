@@ -1,10 +1,10 @@
 # GIT CHEAT SHEET
 
+> Git常用命令速查表
+
 后续会根据工作中遇到的问题不断更新......
 
 ## 参考资料
-
-Git常用命令速查表
 
 [廖雪峰Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
