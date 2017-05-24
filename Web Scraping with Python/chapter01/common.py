@@ -31,7 +31,7 @@ def download3(url, num_retries=2):
         if num_retries > 0:
             if hasattr(e, 'code') and 500 <= e.code < 600:
                 # retry 5XX HTTP errors
-                html = download3(url, num_retries-1)
+                html = download3(url, num_retries - 1)
     return html
 
 
@@ -48,7 +48,7 @@ def download4(url, user_agent='wswp', num_retries=2):
         if num_retries > 0:
             if hasattr(e, 'code') and 500 <= e.code < 600:
                 # retry 5XX HTTP errors
-                html = download4(url, user_agent, num_retries-1)
+                html = download4(url, user_agent, num_retries - 1)
     return html
 
 
@@ -69,7 +69,7 @@ def download5(url, user_agent='wswp', proxy=None, num_retries=2):
         if num_retries > 0:
             if hasattr(e, 'code') and 500 <= e.code < 600:
                 # retry 5XX HTTP errors
-                html = download5(url, user_agent, proxy, num_retries-1)
+                html = download5(url, user_agent, proxy, num_retries - 1)
     return html
 
 

@@ -53,7 +53,6 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
 	new file:   readme.txt
-
 ```
 
 **`git commit`**告诉Git，把文件提交到仓库，**`-m`**后面输入的是本次提交的说明:
@@ -249,7 +248,6 @@ Author: zhangmimi <mimizhang12345@163.com>
 Date:   Wed Apr 26 21:10:38 2017 +0800
 
     wrote a readme file
-
 ```
 
 除了通过`HEAD`的方式回到过去，我们还可以指定`commit id`回到过去。
@@ -476,8 +474,6 @@ nothing to commit, working tree clean
 总之，**`git checkout -- filename`就是让这个文件回到最近一次`git commit`或`git add`时的状态**。
 
 `git checkout -- file`命令中的`--`很重要，没有`--`，就变成了“切换到另一个分支”的命令，我们在后面的分支管理中会再次遇到`git checkout`命令。
-
-
 
 ### 2.5 [删除文件](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000)
 
