@@ -88,9 +88,27 @@ Uploading /Users/Desktop/capture/屏幕快照 2017-08-22 下午9.38.14.png => �
 See upload log at path /Users/zhangmimi/.qshell/qupload/8c88a3fffa7b9d2fc7f997ef65ed2334/8c88a3fffa7b9d2fc7f997ef65ed2334.log
 ```
 
-## 5. 删除文件：
+## 5. 获取文件列表：`listbucket`
 
-### 5.1 删除单个文件：`delete`
+```
+qshell listbucket [-marker <Marker>] <Bucket> [<Prefix>] <ListBucketResultFile>
+```
+
+`Bucket`：空间名称
+`Prefix`：空间中的文件名前缀，如果不指定该参数则列出全部文件信息
+
+`ListBucketResultFile`：如果该参数指定为`stdout`，则会把结果输出到终端
+
+```bash
+$ qshell listbucket test 屏幕快 stdout
+屏幕快照 2016-10-12 下午4.22.27.png	175981	FngiNaL4WjtymSQBuTmB1NrOuGCb	14762606477081422	image/png	0	
+屏幕快照 2017-02-04 下午3.56.31.png	28719	Fj8tOiTxAKCX4w4pmU-k8njMVyAT	14861950222714450	image/png	0	
+屏幕快照 2017-02-04 下午4.37.12.png	27116	FuTGTo5NO_fGhkjiCXZwhLu5CTht	14861974479498973	image/png	0	
+```
+
+## 6. 删除文件：
+
+### 6.1 删除单个文件：`delete`
 
 ```
 qshell delete <Bucket> <Key>
@@ -99,11 +117,32 @@ qshell delete <Bucket> <Key>
 `Bucket`：空间名称
 `Key`：空间中的文件名
 
-```
+```bash
 $ qshell delete test "屏幕快照 2017-02-04 下午5.05.42.png"
 ```
 
 test为空间名称，"屏幕快照 2017-02-04 下午5.05.42.png"为空间中的文件名称。
 
+### 6.2 批量删除：`batchdelete`
 
+`batchdelete`命令用来根据一个七牛空间中的文件名列表来批量删除空间中的这些文件。
+
+```
+qshell batchdelete [-force] <Bucket> <KeyListFile>
+```
+
+`Bucket`：空间名称
+`KeyListFile`：文件列表文件，是一个txt文件，样式如下：
+
+```
+a.jpg
+test/b.jpg
+```
+
+`-force`：表示强制删除，不需要验证
+
+```bash
+$ qshell batchdelete test test.txt
+<DANGER> Input hbcbhf to confirm operation: hbcbhf
+```
 
